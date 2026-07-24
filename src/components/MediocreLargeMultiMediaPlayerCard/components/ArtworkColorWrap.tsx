@@ -11,14 +11,16 @@ export const ArtworkColorWrap = memo<ArtworkColorWrapProps>(
       const { artVars, haVars } = useArtworkColors();
 
       return (
-        <div
+        <ha-card
           {...props}
           style={{
+            overflow: "hidden",
+            padding: 0,
             ...(artVars ?? {}),
             ...(haVars && useArtColors ? haVars : {}),
             ...(typeof style === "object" ? style : {}),
           }}
-          ref={ref}
+          ref={ref as any}
         />
       );
     }

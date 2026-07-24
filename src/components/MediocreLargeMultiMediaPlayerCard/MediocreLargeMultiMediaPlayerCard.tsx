@@ -34,23 +34,18 @@ export type NavigationRoute =
 
 const styles = {
   root: css({
-    display: "grid",
+    display: "flex",
+    flexDirection: "column",
     minHeight: 0,
-    gridTemplateRows: "1fr auto",
-    gridTemplateColumns: "1fr",
-    rowGap: 0,
-    backgroundColor: theme.colors.card,
-    borderRadius: "var(--ha-card-border-radius, 12px)",
-    borderWidth: "var(--ha-card-border-width, 1px)",
-    borderColor: "var(--ha-card-border-color, var(--divider-color, rgba(255, 255, 255, 0.12)))",
-    borderStyle: "var(--ha-card-border-style, solid)",
     overflow: "hidden",
+    rowGap: 0,
     boxSizing: "border-box",
     "*, *:before, *:after": {
       boxSizing: "border-box",
     },
   }),
   rootDesktop: css({
+    display: "grid",
     gridTemplateColumns: "1fr 1fr",
     gridTemplateRows: "1fr auto", // Make first row stretch, second row auto-sized for footer
     gridTemplateAreas: `
@@ -79,6 +74,7 @@ const styles = {
     alignSelf: "stretch",
     overflow: "hidden",
     minHeight: 0,
+    flex: 1,
     backgroundColor: "transparent",
     borderRadius: 0,
     marginBottom: 0,
@@ -105,11 +101,12 @@ const styles = {
     margin: "12px 8px 12px 8px",
   }),
   footer: css({
-    alignSelf: "end",
+    alignSelf: "stretch",
     gap: 0,
     display: "flex",
     flexDirection: "column",
     borderTop: "1px solid var(--ha-card-border-color, var(--divider-color, rgba(255, 255, 255, 0.12)))",
+    backgroundColor: "transparent",
   }),
   footerDesktop: css({
     gridArea: "footer",
