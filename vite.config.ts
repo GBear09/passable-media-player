@@ -27,10 +27,10 @@ export default defineConfig(({}) => {
     },
     build: {
       lib: {
-        name: "MediocreMediaPlayerCard",
+        name: "PassableMediaPlayerCard",
         entry: ["src/cards/index.ts"],
         fileName: () =>
-          `mediocre-hass-media-player-cards${isDevelopment ? "-dev" : ""}.js`,
+          `passable-media-player${isDevelopment ? "-dev" : ""}.js`,
         formats: ["umd"],
       },
       // Only include watch configuration if --watch flag is present
