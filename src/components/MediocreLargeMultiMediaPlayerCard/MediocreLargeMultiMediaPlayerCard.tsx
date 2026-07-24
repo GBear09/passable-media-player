@@ -38,7 +38,14 @@ const styles = {
     minHeight: 0,
     gridTemplateRows: "1fr auto",
     gridTemplateColumns: "1fr",
-    rowGap: 12,
+    rowGap: 0,
+    backgroundColor: theme.colors.card,
+    borderRadius: "var(--ha-card-border-radius, 12px)",
+    borderWidth: "var(--ha-card-border-width, 1px)",
+    borderColor: "var(--ha-card-border-color, var(--divider-color, rgba(255, 255, 255, 0.12)))",
+    borderStyle: "var(--ha-card-border-style, solid)",
+    overflow: "hidden",
+    boxSizing: "border-box",
     "*, *:before, *:after": {
       boxSizing: "border-box",
     },
@@ -54,7 +61,7 @@ const styles = {
   }),
   rootPanel: css({
     height: "100%",
-    padding: 12,
+    padding: 0,
     maxHeight: "calc(100vh - 24px - var(--header-height, 16px))",
     // Below is needed because panel mode enforces 0px border radius for some reason
     "--ha-card-border-radius": `max(${theme.sizes.cardBorderRadius}, 12px)`,
@@ -72,12 +79,10 @@ const styles = {
     alignSelf: "stretch",
     overflow: "hidden",
     minHeight: 0,
-    backgroundColor: theme.colors.card,
-    borderRadius: 12,
+    backgroundColor: "transparent",
+    borderRadius: 0,
     marginBottom: 0,
-    borderWidth: "var(--ha-card-border-width, 1px)",
-    borderColor: "var(--ha-card-border-color,var(--divider-color,#e0e0e0))",
-    borderStyle: "var(--ha-card-border-style, solid)",
+    border: "none",
   }),
   contentAreaDesktop: css({
     gridArea: "content",
@@ -86,7 +91,7 @@ const styles = {
     gridArea: "massive",
   }),
   contentAreaCard: css({
-    borderRadius: theme.sizes.cardBorderRadius,
+    borderRadius: 0,
   }),
   contentAreaTransparent: css({
     backgroundColor: "transparent",
@@ -101,9 +106,10 @@ const styles = {
   }),
   footer: css({
     alignSelf: "end",
-    gap: 12,
+    gap: 0,
     display: "flex",
     flexDirection: "column",
+    borderTop: "1px solid var(--ha-card-border-color, var(--divider-color, rgba(255, 255, 255, 0.12)))",
   }),
   footerDesktop: css({
     gridArea: "footer",
@@ -112,7 +118,7 @@ const styles = {
     padding: 0,
   }),
   footerInCard: css({
-    padding: "0px 12px 12px 12px",
+    padding: 0,
   }),
 };
 
