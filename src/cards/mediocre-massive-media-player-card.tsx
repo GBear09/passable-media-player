@@ -85,17 +85,27 @@ class MediocreMassiveMediaPlayerCardWrapper extends CardWrapper<MediocreMassiveM
   }
 }
 
-customElements.define(
-  import.meta.env.VITE_MASSIVE_MEDIA_PLAYER_CARD,
-  MediocreMassiveMediaPlayerCardWrapper
-);
+if (!customElements.get(import.meta.env.VITE_MASSIVE_MEDIA_PLAYER_CARD)) {
+  customElements.define(
+    import.meta.env.VITE_MASSIVE_MEDIA_PLAYER_CARD,
+    MediocreMassiveMediaPlayerCardWrapper
+  );
+}
+
+if (!customElements.get("mediocre-massive-media-player-card")) {
+  customElements.define(
+    "mediocre-massive-media-player-card",
+    MediocreMassiveMediaPlayerCardWrapper
+  );
+}
 
 window.customCards = window.customCards || [];
 window.customCards.push({
   type: import.meta.env.VITE_MASSIVE_MEDIA_PLAYER_CARD,
-  name: "Mediocre Massive Media Player Card",
+  name: "Passable Massive Media Player Card",
   preview: true,
-  description: "A media player card with player grouping support.", // Optional
+  description: "A full-featured media player card with player grouping and Radio Mix support.",
   documentationURL:
-    "https://github.com/antontanderup/mediocre-hass-media-player-cards", // Adds a help link in the frontend card editor
+    "https://github.com/GBear09/passable-media-player",
 });
+

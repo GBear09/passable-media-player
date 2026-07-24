@@ -46,7 +46,27 @@ class MediocreChipMediaPlayerGroupCardWrapper extends CardWrapper<MediocreChipMe
   }
 }
 
-customElements.define(
-  import.meta.env.VITE_CHIP_MEDIA_PLAYER_GROUP_CARD,
-  MediocreChipMediaPlayerGroupCardWrapper
-);
+if (!customElements.get(import.meta.env.VITE_CHIP_MEDIA_PLAYER_GROUP_CARD)) {
+  customElements.define(
+    import.meta.env.VITE_CHIP_MEDIA_PLAYER_GROUP_CARD,
+    MediocreChipMediaPlayerGroupCardWrapper
+  );
+}
+
+if (!customElements.get("mediocre-chip-media-player-group-card")) {
+  customElements.define(
+    "mediocre-chip-media-player-group-card",
+    MediocreChipMediaPlayerGroupCardWrapper
+  );
+}
+
+window.customCards = window.customCards || [];
+window.customCards.push({
+  type: import.meta.env.VITE_CHIP_MEDIA_PLAYER_GROUP_CARD,
+  name: "Passable Chip Media Player Group Card",
+  preview: true,
+  description: "A compact chip media player group card.",
+  documentationURL:
+    "https://github.com/GBear09/passable-media-player",
+});
+

@@ -30,7 +30,7 @@ export default defineConfig(({}) => {
         name: "PassableMediaPlayerCard",
         entry: ["src/cards/index.ts"],
         fileName: () =>
-          `passable-media-player${isDevelopment ? "-dev" : ""}.js`,
+          `passable-media-player-card${isDevelopment ? "-dev" : ""}.js`,
         formats: ["umd"],
       },
       // Only include watch configuration if --watch flag is present
