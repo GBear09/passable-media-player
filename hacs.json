@@ -1,4 +1,5 @@
 {
-  "name": "Mediocre Hass Media Player Cards",
-  "filename": "mediocre-hass-media-player-cards.js"
+  "name": "Passable Media Player",
+  "filename": "mediocre-hass-media-player-cards.js",
+  "render_readme": true
 }
