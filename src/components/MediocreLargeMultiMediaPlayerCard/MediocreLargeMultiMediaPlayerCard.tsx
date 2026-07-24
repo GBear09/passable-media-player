@@ -42,7 +42,8 @@ const styles = {
     backgroundColor: theme.colors.card,
     borderRadius: "var(--ha-card-border-radius, 12px)",
     borderWidth: "var(--ha-card-border-width, 1px)",
-    borderColor: "var(--ha-card-border-color, var(--divider-color, rgba(255, 255, 255, 0.12)))",
+    borderColor:
+      "var(--ha-card-border-color, var(--divider-color, rgba(255, 255, 255, 0.12)))",
     borderStyle: "var(--ha-card-border-style, solid)",
     overflow: "hidden",
     boxSizing: "border-box",
@@ -109,7 +110,8 @@ const styles = {
     gap: 0,
     display: "flex",
     flexDirection: "column",
-    borderTop: "1px solid var(--ha-card-border-color, var(--divider-color, rgba(255, 255, 255, 0.12)))",
+    borderTop:
+      "1px solid var(--ha-card-border-color, var(--divider-color, rgba(255, 255, 255, 0.12)))",
   }),
   footerDesktop: css({
     gridArea: "footer",

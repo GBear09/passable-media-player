@@ -11388,31 +11388,29 @@ This usually happens when you export a JSX literal and not the component.
               width: "100%",
               position: "relative",
             },
-            children: b
-              .getVirtualItems()
-              .map(v =>
-                P(
-                  "div",
-                  {
-                    "data-index": v.index,
-                    css: gf.item,
-                    ref: b.measureElement,
-                    style: {
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "100%",
-                      transform: `translateY(${v.start}px)`,
-                    },
-                    children: [
-                      v.index === 0 && n && n(),
-                      y[v.index] === "empty" && i && i(),
-                      y[v.index] !== "empty" && r(t[v.index], v.index),
-                    ],
+            children: b.getVirtualItems().map(v =>
+              P(
+                "div",
+                {
+                  "data-index": v.index,
+                  css: gf.item,
+                  ref: b.measureElement,
+                  style: {
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    transform: `translateY(${v.start}px)`,
                   },
-                  v.key
-                )
-              ),
+                  children: [
+                    v.index === 0 && n && n(),
+                    y[v.index] === "empty" && i && i(),
+                    y[v.index] !== "empty" && r(t[v.index], v.index),
+                  ],
+                },
+                v.key
+              )
+            ),
           }),
         })
       );
