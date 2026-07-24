@@ -21,8 +21,10 @@ export type MiniPlayerProps = {
 
 const styles = {
   root: css({
-    borderRadius: "12px",
+    borderRadius: 0,
     overflow: "hidden",
+    borderTop: "1px solid var(--ha-card-border-color, var(--divider-color, rgba(255, 255, 255, 0.12)))",
+    backgroundColor: "rgba(0, 0, 0, 0.15)",
   }),
 };
 

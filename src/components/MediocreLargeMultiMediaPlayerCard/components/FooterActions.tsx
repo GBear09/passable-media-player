@@ -12,26 +12,22 @@ import { useSelectedPlayer } from "@components/SelectedPlayerContext";
 
 const styles = {
   root: css({
-    backgroundColor: theme.colors.card,
+    backgroundColor: "transparent",
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    borderRadius: "12px",
-    padding: "12px",
+    borderRadius: 0,
+    padding: "10px 16px",
     width: "100%",
     position: "relative",
     boxSizing: "border-box",
-    borderWidth: "var(--ha-card-border-width, 1px)",
-    borderColor: "var(--ha-card-border-color,var(--divider-color,#e0e0e0))",
-    borderStyle: "var(--ha-card-border-style, solid)",
+    border: "none",
   }),
   footerInCard: css({
-    "--mmpc-surface-higher": `hsl(from ${theme.colors.card} h s calc(l ${isDarkMode() ? "+" : "-"} 5))`,
-    "--mmpc-surface-shadow": `hsl(from var(--mmpc-surface-higher) h calc(s / 2) calc(l - 10))`,
-    "--ha-card-border-width": "0px",
-    backgroundColor: "var(--mmpc-surface-higher)",
-    boxShadow: "0px 0px 10px var(--mmpc-surface-shadow)",
+    backgroundColor: "transparent",
+    border: "none",
+    boxShadow: "none",
   }),
 };
 
