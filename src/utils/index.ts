@@ -29,3 +29,5 @@ export * from "./lyrionTrackInfoUtils";
 export * from "./supportedFeaturesUtils";
 export * from "./transferLmsQueue";
 export * from "./transferMaQueue";
+export * from "./startRadioMix";
+

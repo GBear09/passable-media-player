@@ -1,12 +1,10 @@
-# 🎵 Mediocre Media Player Cards
+# 📻 Passable Media Player
 
-[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/custom-components/hacs)
-[![GitHub Release](https://img.shields.io/github/v/release/antontanderup/mediocre-hass-media-player-cards?color=blue)](https://github.com/antontanderup/mediocre-hass-media-player-cards/releases)
-[![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/antontanderup/mediocre-hass-media-player-cards/total)](https://github.com/antontanderup/mediocre-hass-media-player-cards/releases)
-[![Chat on Oase](<https://img.shields.io/badge/Chat-Oase-lightblue?color=rgb(74%20196%20169)>)](https://oase.app/oase/8414e128-52fe-42c7-b7c8-789fd0930a3e/join/cfdc211d-eb53-4cef-af62-2d1c4642a180)
-[![BuyMeACoffee](https://raw.githubusercontent.com/pachadotdev/buymeacoffee-badges/main/bmc-yellow.svg)](https://www.buymeacoffee.com/antontadamsen)
+> [!NOTE]  
+> **Credit & Attribution**: This project is a fork of the excellent [mediocre-hass-media-player-cards](https://github.com/antontanderup/mediocre-hass-media-player-cards) created by **Anton T. Adamsen** ([@antontanderup](https://github.com/antontanderup)).  
+> All core card architecture and design belong to Anton T. Adamsen under the [MIT License](LICENSE). This fork adds custom Radio Mix capabilities and personal card enhancements.
 
-Media player cards for Home Assistant that let you group speakers, add custom action buttons, browse, search for music, manage your queue and more. A visual editor is available for all media player card configuration options.
+Media player cards for Home Assistant that let you group speakers, add custom action buttons, browse, search for music, manage your queue, and start radio mixes directly from songs, artists, or albums.
 
 ## Installation
 

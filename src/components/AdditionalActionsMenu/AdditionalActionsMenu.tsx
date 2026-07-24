@@ -8,6 +8,7 @@ import {
   transferLmsQueue,
   transferMaQueue,
   getIsMassPlayer,
+  startRadioMix,
 } from "@utils";
 import {
   OverlayMenu,
@@ -87,6 +88,47 @@ export const AdditionalActionsMenu = ({
             label: player.attributes.friendly_name || player.entity_id,
             onClick: () => transferQueue(player.entity_id),
           })),
+        });
+      }
+
+      // Radio Mix menu options
+      const mediaTitle = player.attributes.media_title;
+      const mediaArtist = player.attributes.media_artist;
+      const mediaAlbum = player.attributes.media_album_name;
+      const radioChildren: OverlayMenuItem[] = [];
+
+      if (mediaTitle) {
+        radioChildren.push({
+          label: `${t({ id: "AdditionalActionsMenu.song_radio" })}: ${mediaTitle}`,
+          icon: "mdi:music-note",
+          onClick: () =>
+            startRadioMix(player.entity_id, ma_entity_id, mediaTitle, "track"),
+        });
+      }
+      if (mediaArtist) {
+        radioChildren.push({
+          label: `${t({ id: "AdditionalActionsMenu.artist_radio" })}: ${mediaArtist}`,
+          icon: "mdi:account-music",
+          onClick: () =>
+            startRadioMix(player.entity_id, ma_entity_id, mediaArtist, "artist"),
+        });
+      }
+      if (mediaAlbum) {
+        radioChildren.push({
+          label: `${t({ id: "AdditionalActionsMenu.album_radio" })}: ${mediaAlbum}`,
+          icon: "mdi:album",
+          onClick: () =>
+            startRadioMix(player.entity_id, ma_entity_id, mediaAlbum, "album"),
+        });
+      }
+
+      if (radioChildren.length > 0) {
+        items.push({
+          label: t({
+            id: "AdditionalActionsMenu.start_radio_mix",
+          }),
+          icon: "mdi:radio-tower",
+          children: radioChildren,
         });
       }
     }
