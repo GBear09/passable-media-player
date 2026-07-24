@@ -2,6 +2,13 @@ import { IconButton, usePlayer } from "@components";
 import { useSupportedFeatures } from "@hooks";
 import { css } from "@emotion/react";
 import { usePlayerActions } from "@hooks/usePlayerActions";
+import { useMemo } from "preact/hooks";
+import { startRadioMix } from "@utils";
+import { useSelectedPlayer } from "@components/SelectedPlayerContext";
+import {
+  OverlayMenu,
+  OverlayMenuItem,
+} from "@components/OverlayMenu/OverlayMenu";
 
 const styles = {
   root: css({
@@ -17,11 +24,15 @@ const styles = {
 };
 
 export const PlaybackControls = () => {
+  const { selectedPlayer } = useSelectedPlayer();
+  const player = usePlayer();
   const {
-    attributes: { shuffle, repeat },
+    attributes: { shuffle, repeat, media_title: mediaTitle, media_artist: mediaArtist, media_album_name: mediaAlbum },
     state,
-  } = usePlayer();
+    entity_id: entityId,
+  } = player;
 
+  const maEntityId = selectedPlayer?.ma_entity_id;
   const playing = state === "playing";
 
   const {
@@ -42,6 +53,32 @@ export const PlaybackControls = () => {
     nextTrack,
     stop,
   } = usePlayerActions();
+
+  const radioMixMenuItems: OverlayMenuItem[] = useMemo(() => {
+    const items: OverlayMenuItem[] = [];
+    if (mediaTitle) {
+      items.push({
+        label: `Song Radio (${mediaTitle})`,
+        icon: "mdi:music-note",
+        onClick: () => startRadioMix(entityId, maEntityId, mediaTitle, "track"),
+      });
+    }
+    if (mediaArtist) {
+      items.push({
+        label: `Artist Radio (${mediaArtist})`,
+        icon: "mdi:account-music",
+        onClick: () => startRadioMix(entityId, maEntityId, mediaArtist, "artist"),
+      });
+    }
+    if (mediaAlbum) {
+      items.push({
+        label: `Album Radio (${mediaAlbum})`,
+        icon: "mdi:album",
+        onClick: () => startRadioMix(entityId, maEntityId, mediaAlbum, "album"),
+      });
+    }
+    return items;
+  }, [mediaTitle, mediaArtist, mediaAlbum, entityId, maEntityId]);
 
   return (
     <div css={styles.root}>
@@ -88,6 +125,19 @@ export const PlaybackControls = () => {
                 ? "mdi:repeat"
                 : "mdi:repeat-off"
           }
+        />
+      )}
+      {radioMixMenuItems.length > 0 && (
+        <OverlayMenu
+          menuItems={radioMixMenuItems}
+          side="top"
+          renderTrigger={triggerProps => (
+            <IconButton
+              size="small"
+              icon="mdi:radio-tower"
+              {...triggerProps}
+            />
+          )}
         />
       )}
     </div>
