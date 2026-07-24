@@ -6,20 +6,38 @@
 
 | Language | Keys translated | Completion | Status |
 |----------|----------------|------------|--------|
-| he | 69 / 69 | 100% ██████████ | ✅ |
-| nl | 69 / 69 | 100% ██████████ | ✅ |
-| da | 66 / 69 | 96% ██████████ | 🟡 |
-| de | 59 / 69 | 86% █████████░ | 🟡 |
-| pt | 59 / 69 | 86% █████████░ | 🟡 |
+| he | 69 / 73 | 95% ██████████ | 🟡 |
+| nl | 69 / 73 | 95% ██████████ | 🟡 |
+| da | 66 / 73 | 90% █████████░ | 🟡 |
+| de | 59 / 73 | 81% ████████░░ | 🟡 |
+| pt | 59 / 73 | 81% ████████░░ | 🟡 |
 
-_Total English keys: 69_
+_Total English keys: 73_
 
 ## Missing keys per language
+
+### he
+
+  - `AdditionalActionsMenu.start_radio_mix`
+  - `AdditionalActionsMenu.song_radio`
+  - `AdditionalActionsMenu.artist_radio`
+  - `AdditionalActionsMenu.album_radio`
+
+### nl
+
+  - `AdditionalActionsMenu.start_radio_mix`
+  - `AdditionalActionsMenu.song_radio`
+  - `AdditionalActionsMenu.artist_radio`
+  - `AdditionalActionsMenu.album_radio`
 
 ### da
 
   - `MediocreMultiMediaPlayerCard.AdditionalActionsView.lyrion_info_title`
   - `MediocreMultiMediaPlayerCard.AdditionalActionsView.related_albums_title`
+  - `AdditionalActionsMenu.start_radio_mix`
+  - `AdditionalActionsMenu.song_radio`
+  - `AdditionalActionsMenu.artist_radio`
+  - `AdditionalActionsMenu.album_radio`
   - `LyrionTrackInfo.empty_state`
 
 ### de
@@ -33,6 +51,10 @@ _Total English keys: 69_
   - `MediocreMassiveMediaPlayerCard.PlayerActions.queue_view_modal_title`
   - `Search.search_provider.title`
   - `Search.enqueue_mode.title`
+  - `AdditionalActionsMenu.start_radio_mix`
+  - `AdditionalActionsMenu.song_radio`
+  - `AdditionalActionsMenu.artist_radio`
+  - `AdditionalActionsMenu.album_radio`
   - `LyrionTrackInfo.empty_state`
 
 ### pt
@@ -46,4 +68,8 @@ _Total English keys: 69_
   - `MediocreMassiveMediaPlayerCard.PlayerActions.queue_view_modal_title`
   - `Search.search_provider.title`
   - `Search.enqueue_mode.title`
+  - `AdditionalActionsMenu.start_radio_mix`
+  - `AdditionalActionsMenu.song_radio`
+  - `AdditionalActionsMenu.artist_radio`
+  - `AdditionalActionsMenu.album_radio`
   - `LyrionTrackInfo.empty_state`
