@@ -16,8 +16,7 @@ export function getIsMassPlayer(entity: Partial<MediaPlayerEntity>): boolean {
   if (typeof entity?.attributes?.active_child !== "undefined") {
     const hass = getHass();
     const activeChild = hass.states[entity.attributes.active_child] as
-      | MediaPlayerEntity
-      | undefined;
+      MediaPlayerEntity | undefined;
     if (!activeChild) return false;
     return getIsMassPlayer(activeChild);
   }
