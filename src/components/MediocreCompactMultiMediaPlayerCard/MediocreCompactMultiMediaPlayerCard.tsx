@@ -244,6 +244,15 @@ export const MediocreCompactMultiMediaPlayerCard = ({
       style={{
         ...(artVars ?? {}),
         ...(haVars && use_art_colors ? haVars : {}),
+        ...(isEmbeddedInMultiCard
+          ? {
+              background: "transparent",
+              border: "none",
+              boxShadow: "none",
+              "--ha-card-border-width": "0px",
+              "--ha-card-box-shadow": "none",
+            }
+          : {}),
       }}
     >
       <div

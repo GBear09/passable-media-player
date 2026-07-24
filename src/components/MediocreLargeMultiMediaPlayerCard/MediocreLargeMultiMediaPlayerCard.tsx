@@ -53,7 +53,7 @@ const styles = {
   }),
   rootDesktop: css({
     gridTemplateColumns: "1fr 1fr",
-    gridTemplateRows: "1fr auto", // Make first row stretch, second row auto-sized for footer
+    gridTemplateRows: "1fr auto",
     gridTemplateAreas: `
       "massive content"
       "massive footer"
@@ -64,7 +64,6 @@ const styles = {
     height: "100%",
     padding: 0,
     maxHeight: "calc(100vh - 24px - var(--header-height, 16px))",
-    // Below is needed because panel mode enforces 0px border radius for some reason
     "--ha-card-border-radius": `max(${theme.sizes.cardBorderRadius}, 12px)`,
     "*": {
       "--ha-card-border-radius": "inherit !important",
@@ -112,6 +111,7 @@ const styles = {
     flexDirection: "column",
     borderTop:
       "1px solid var(--ha-card-border-color, var(--divider-color, rgba(255, 255, 255, 0.12)))",
+    backgroundColor: "rgba(0, 0, 0, 0.2)",
   }),
   footerDesktop: css({
     gridArea: "footer",
