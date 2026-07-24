@@ -21,6 +21,7 @@ import {
   getSourceIcon,
   transferLmsQueue,
   transferMaQueue,
+  startRadioMix,
 } from "@utils";
 import { useSelectedPlayer } from "@components/SelectedPlayerContext";
 import { LyrionRelatedAlbums } from "@components/LyrionRelatedAlbums";
@@ -158,6 +159,46 @@ export const AdditionalActionsView = memo(() => {
     }));
   }, [player.attributes.source_list, player.entity_id]);
 
+  const radioMixMenuItems: OverlayMenuItem[] = useMemo(() => {
+    const items: OverlayMenuItem[] = [];
+    const mediaTitle = player.attributes.media_title;
+    const mediaArtist = player.attributes.media_artist;
+    const mediaAlbum = player.attributes.media_album_name;
+
+    if (mediaTitle) {
+      items.push({
+        label: `Song Radio (${mediaTitle})`,
+        icon: "mdi:music-note",
+        onClick: () =>
+          startRadioMix(entity_id, ma_entity_id, mediaTitle, "track"),
+      });
+    }
+    if (mediaArtist) {
+      items.push({
+        label: `Artist Radio (${mediaArtist})`,
+        icon: "mdi:account-music",
+        onClick: () =>
+          startRadioMix(entity_id, ma_entity_id, mediaArtist, "artist"),
+      });
+    }
+    if (mediaAlbum) {
+      items.push({
+        label: `Album Radio (${mediaAlbum})`,
+        icon: "mdi:album",
+        onClick: () =>
+          startRadioMix(entity_id, ma_entity_id, mediaAlbum, "album"),
+      });
+    }
+
+    return items;
+  }, [
+    player.attributes.media_title,
+    player.attributes.media_artist,
+    player.attributes.media_album_name,
+    entity_id,
+    ma_entity_id,
+  ]);
+
   const moreInfoButtonProps = useActionProps({
     rootElement,
     actionConfig: {
@@ -197,6 +238,18 @@ export const AdditionalActionsView = memo(() => {
           })}
         />
         <div css={styles.buttons}>
+          {radioMixMenuItems.length > 0 && (
+            <OverlayMenu
+              menuItems={radioMixMenuItems}
+              side="bottom"
+              renderTrigger={triggerProps => (
+                <Chip icon="mdi:radio-tower" {...triggerProps}>
+                  Start Radio Mix
+                  <Icon size="x-small" icon="mdi:chevron-down" />
+                </Chip>
+              )}
+            />
+          )}
           {!!ma_entity_id && isMainEntityMassPlayer && (
             <Fragment>
               {ma_favorite_button_entity_id && (
