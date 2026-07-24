@@ -20,13 +20,7 @@ export type LyrionBrowserItem = {
   id: string;
   title: string;
   type:
-    | "artist"
-    | "album"
-    | "track"
-    | "genre"
-    | "playlist"
-    | "category"
-    | "app";
+    "artist" | "album" | "track" | "genre" | "playlist" | "category" | "app";
   can_play: boolean;
   can_expand: boolean;
   isFavorite?: boolean;

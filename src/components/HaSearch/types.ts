@@ -1,22 +1,12 @@
 // Media types
 export type HaMediaClass =
-  | "artist"
-  | "album"
-  | "track"
-  | "playlist"
-  | "music"
-  | "podcast";
+  "artist" | "album" | "track" | "playlist" | "music" | "podcast";
 
 // Filter types (includes "all" in addition to HaMediaClass)
 export type HaFilterType = "all" | HaContentType;
 
 export type HaContentType =
-  | "tracks"
-  | "albums"
-  | "artists"
-  | "playlists"
-  | "music"
-  | string;
+  "tracks" | "albums" | "artists" | "playlists" | "music" | string;
 
 // Enqueue modes for media playback
 export type HaEnqueueMode = "add" | "next" | "play" | "replace";
