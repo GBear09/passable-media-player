@@ -4,13 +4,13 @@
 
 ## Summary
 
-| Language | Keys translated | Completion | Status |
-|----------|----------------|------------|--------|
-| he | 69 / 73 | 95% ██████████ | 🟡 |
-| nl | 69 / 73 | 95% ██████████ | 🟡 |
-| da | 66 / 73 | 90% █████████░ | 🟡 |
-| de | 59 / 73 | 81% ████████░░ | 🟡 |
-| pt | 59 / 73 | 81% ████████░░ | 🟡 |
+| Language | Keys translated | Completion     | Status |
+| -------- | --------------- | -------------- | ------ |
+| he       | 69 / 73         | 95% ██████████ | 🟡     |
+| nl       | 69 / 73         | 95% ██████████ | 🟡     |
+| da       | 66 / 73         | 90% █████████░ | 🟡     |
+| de       | 59 / 73         | 81% ████████░░ | 🟡     |
+| pt       | 59 / 73         | 81% ████████░░ | 🟡     |
 
 _Total English keys: 73_
 
@@ -18,58 +18,58 @@ _Total English keys: 73_
 
 ### he
 
-  - `AdditionalActionsMenu.start_radio_mix`
-  - `AdditionalActionsMenu.song_radio`
-  - `AdditionalActionsMenu.artist_radio`
-  - `AdditionalActionsMenu.album_radio`
+- `AdditionalActionsMenu.start_radio_mix`
+- `AdditionalActionsMenu.song_radio`
+- `AdditionalActionsMenu.artist_radio`
+- `AdditionalActionsMenu.album_radio`
 
 ### nl
 
-  - `AdditionalActionsMenu.start_radio_mix`
-  - `AdditionalActionsMenu.song_radio`
-  - `AdditionalActionsMenu.artist_radio`
-  - `AdditionalActionsMenu.album_radio`
+- `AdditionalActionsMenu.start_radio_mix`
+- `AdditionalActionsMenu.song_radio`
+- `AdditionalActionsMenu.artist_radio`
+- `AdditionalActionsMenu.album_radio`
 
 ### da
 
-  - `MediocreMultiMediaPlayerCard.AdditionalActionsView.lyrion_info_title`
-  - `MediocreMultiMediaPlayerCard.AdditionalActionsView.related_albums_title`
-  - `AdditionalActionsMenu.start_radio_mix`
-  - `AdditionalActionsMenu.song_radio`
-  - `AdditionalActionsMenu.artist_radio`
-  - `AdditionalActionsMenu.album_radio`
-  - `LyrionTrackInfo.empty_state`
+- `MediocreMultiMediaPlayerCard.AdditionalActionsView.lyrion_info_title`
+- `MediocreMultiMediaPlayerCard.AdditionalActionsView.related_albums_title`
+- `AdditionalActionsMenu.start_radio_mix`
+- `AdditionalActionsMenu.song_radio`
+- `AdditionalActionsMenu.artist_radio`
+- `AdditionalActionsMenu.album_radio`
+- `LyrionTrackInfo.empty_state`
 
 ### de
 
-  - `MediocreMultiMediaPlayerCard.AdditionalActionsView.more_info`
-  - `MediocreMultiMediaPlayerCard.AdditionalActionsView.lyrion_info_title`
-  - `MediocreMultiMediaPlayerCard.AdditionalActionsView.related_albums_title`
-  - `MediocreMultiMediaPlayerCard.QueueView.up_next`
-  - `MediocreMultiMediaPlayerCard.QueueView.up_next_subtitle`
-  - `MediocreMediaPlayerCard.QueueView.up_next`
-  - `MediocreMassiveMediaPlayerCard.PlayerActions.queue_view_modal_title`
-  - `Search.search_provider.title`
-  - `Search.enqueue_mode.title`
-  - `AdditionalActionsMenu.start_radio_mix`
-  - `AdditionalActionsMenu.song_radio`
-  - `AdditionalActionsMenu.artist_radio`
-  - `AdditionalActionsMenu.album_radio`
-  - `LyrionTrackInfo.empty_state`
+- `MediocreMultiMediaPlayerCard.AdditionalActionsView.more_info`
+- `MediocreMultiMediaPlayerCard.AdditionalActionsView.lyrion_info_title`
+- `MediocreMultiMediaPlayerCard.AdditionalActionsView.related_albums_title`
+- `MediocreMultiMediaPlayerCard.QueueView.up_next`
+- `MediocreMultiMediaPlayerCard.QueueView.up_next_subtitle`
+- `MediocreMediaPlayerCard.QueueView.up_next`
+- `MediocreMassiveMediaPlayerCard.PlayerActions.queue_view_modal_title`
+- `Search.search_provider.title`
+- `Search.enqueue_mode.title`
+- `AdditionalActionsMenu.start_radio_mix`
+- `AdditionalActionsMenu.song_radio`
+- `AdditionalActionsMenu.artist_radio`
+- `AdditionalActionsMenu.album_radio`
+- `LyrionTrackInfo.empty_state`
 
 ### pt
 
-  - `MediocreMultiMediaPlayerCard.AdditionalActionsView.more_info`
-  - `MediocreMultiMediaPlayerCard.AdditionalActionsView.lyrion_info_title`
-  - `MediocreMultiMediaPlayerCard.AdditionalActionsView.related_albums_title`
-  - `MediocreMultiMediaPlayerCard.QueueView.up_next`
-  - `MediocreMultiMediaPlayerCard.QueueView.up_next_subtitle`
-  - `MediocreMediaPlayerCard.QueueView.up_next`
-  - `MediocreMassiveMediaPlayerCard.PlayerActions.queue_view_modal_title`
-  - `Search.search_provider.title`
-  - `Search.enqueue_mode.title`
-  - `AdditionalActionsMenu.start_radio_mix`
-  - `AdditionalActionsMenu.song_radio`
-  - `AdditionalActionsMenu.artist_radio`
-  - `AdditionalActionsMenu.album_radio`
-  - `LyrionTrackInfo.empty_state`
+- `MediocreMultiMediaPlayerCard.AdditionalActionsView.more_info`
+- `MediocreMultiMediaPlayerCard.AdditionalActionsView.lyrion_info_title`
+- `MediocreMultiMediaPlayerCard.AdditionalActionsView.related_albums_title`
+- `MediocreMultiMediaPlayerCard.QueueView.up_next`
+- `MediocreMultiMediaPlayerCard.QueueView.up_next_subtitle`
+- `MediocreMediaPlayerCard.QueueView.up_next`
+- `MediocreMassiveMediaPlayerCard.PlayerActions.queue_view_modal_title`
+- `Search.search_provider.title`
+- `Search.enqueue_mode.title`
+- `AdditionalActionsMenu.start_radio_mix`
+- `AdditionalActionsMenu.song_radio`
+- `AdditionalActionsMenu.artist_radio`
+- `AdditionalActionsMenu.album_radio`
+- `LyrionTrackInfo.empty_state`

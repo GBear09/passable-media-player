@@ -110,7 +110,12 @@ export const AdditionalActionsMenu = ({
           label: `${t({ id: "AdditionalActionsMenu.artist_radio" })}: ${mediaArtist}`,
           icon: "mdi:account-music",
           onClick: () =>
-            startRadioMix(player.entity_id, ma_entity_id, mediaArtist, "artist"),
+            startRadioMix(
+              player.entity_id,
+              ma_entity_id,
+              mediaArtist,
+              "artist"
+            ),
         });
       }
       if (mediaAlbum) {
