@@ -27,7 +27,13 @@ export const PlaybackControls = () => {
   const { selectedPlayer } = useSelectedPlayer();
   const player = usePlayer();
   const {
-    attributes: { shuffle, repeat, media_title: mediaTitle, media_artist: mediaArtist, media_album_name: mediaAlbum },
+    attributes: {
+      shuffle,
+      repeat,
+      media_title: mediaTitle,
+      media_artist: mediaArtist,
+      media_album_name: mediaAlbum,
+    },
     state,
     entity_id: entityId,
   } = player;
@@ -67,7 +73,8 @@ export const PlaybackControls = () => {
       items.push({
         label: `Artist Radio (${mediaArtist})`,
         icon: "mdi:account-music",
-        onClick: () => startRadioMix(entityId, maEntityId, mediaArtist, "artist"),
+        onClick: () =>
+          startRadioMix(entityId, maEntityId, mediaArtist, "artist"),
       });
     }
     if (mediaAlbum) {
@@ -132,11 +139,7 @@ export const PlaybackControls = () => {
           menuItems={radioMixMenuItems}
           side="top"
           renderTrigger={triggerProps => (
-            <IconButton
-              size="small"
-              icon="mdi:radio-tower"
-              {...triggerProps}
-            />
+            <IconButton size="small" icon="mdi:radio-tower" {...triggerProps} />
           )}
         />
       )}
