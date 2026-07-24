@@ -66,7 +66,5 @@ window.customCards.push({
   name: "Passable Chip Media Player Group Card",
   preview: true,
   description: "A compact chip media player group card.",
-  documentationURL:
-    "https://github.com/GBear09/passable-media-player",
+  documentationURL: "https://github.com/GBear09/passable-media-player",
 });
-

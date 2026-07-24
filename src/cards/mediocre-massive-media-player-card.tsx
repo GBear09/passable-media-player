@@ -104,8 +104,7 @@ window.customCards.push({
   type: import.meta.env.VITE_MASSIVE_MEDIA_PLAYER_CARD,
   name: "Passable Massive Media Player Card",
   preview: true,
-  description: "A full-featured media player card with player grouping and Radio Mix support.",
-  documentationURL:
-    "https://github.com/GBear09/passable-media-player",
+  description:
+    "A full-featured media player card with player grouping and Radio Mix support.",
+  documentationURL: "https://github.com/GBear09/passable-media-player",
 });
-
