@@ -98,17 +98,27 @@ class MediocreMediaPlayerCardWrapper extends CardWrapper<MediocreMediaPlayerCard
   }
 }
 
-customElements.define(
-  import.meta.env.VITE_MEDIA_PLAYER_CARD,
-  MediocreMediaPlayerCardWrapper
-);
+if (!customElements.get(import.meta.env.VITE_MEDIA_PLAYER_CARD)) {
+  customElements.define(
+    import.meta.env.VITE_MEDIA_PLAYER_CARD,
+    MediocreMediaPlayerCardWrapper
+  );
+}
+
+if (!customElements.get("mediocre-media-player-card")) {
+  customElements.define(
+    "mediocre-media-player-card",
+    MediocreMediaPlayerCardWrapper
+  );
+}
 
 window.customCards = window.customCards || [];
 window.customCards.push({
   type: import.meta.env.VITE_MEDIA_PLAYER_CARD,
-  name: "Mediocre Media Player Card",
+  name: "Passable Media Player Card",
   preview: true,
-  description: "A media player card with player grouping support.",
+  description: "A media player card with player grouping and Radio Mix support.",
   documentationURL:
-    "https://github.com/antontanderup/mediocre-hass-media-player-cards",
+    "https://github.com/GBear09/passable-media-player",
 });
+
