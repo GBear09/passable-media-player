@@ -262,7 +262,11 @@ export const MediocreCompactMultiMediaPlayerCard = ({
       }}
     >
       <div
-        css={[styles.card, use_art_colors && styles.artBackground]}
+        css={[
+          styles.card,
+          use_art_colors && styles.artBackground,
+          isEmbeddedInMultiCard && css({ borderRadius: "0px !important" }),
+        ]}
         onClick={setLastInteraction}
       >
         <div css={styles.cardContent} style={{ opacity: isOn ? 1 : 0.7 }}>
