@@ -1,5 +1,6 @@
 {
   "name": "passable-media-player-card",
+  "version": "1.8.0",
   "private": false,
   "type": "module",
   "license": "MIT",
