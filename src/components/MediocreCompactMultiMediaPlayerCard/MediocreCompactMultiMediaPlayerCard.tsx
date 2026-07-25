@@ -239,8 +239,10 @@ export const MediocreCompactMultiMediaPlayerCard = ({
     return null;
   }
 
+  const CardElement = isEmbeddedInMultiCard ? "div" : "ha-card";
+
   return (
-    <ha-card
+    <CardElement
       style={{
         ...(artVars ?? {}),
         ...(haVars && use_art_colors ? haVars : {}),
@@ -249,8 +251,12 @@ export const MediocreCompactMultiMediaPlayerCard = ({
               background: "transparent",
               border: "none",
               boxShadow: "none",
+              margin: "0px",
+              padding: "0px",
+              borderRadius: "0px",
               "--ha-card-border-width": "0px",
               "--ha-card-box-shadow": "none",
+              "--ha-card-border-radius": "0px",
             }
           : {}),
       }}
@@ -382,6 +388,6 @@ export const MediocreCompactMultiMediaPlayerCard = ({
           />
         )}
       </div>
-    </ha-card>
+    </CardElement>
   );
 };
