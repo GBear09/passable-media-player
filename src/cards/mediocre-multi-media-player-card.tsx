@@ -35,7 +35,9 @@ class MediocreMultiMediaPlayerCardWrapper extends CardWrapper<MediocreMultiMedia
     try {
       return this.config.media_players.some(player => {
         const entityId = player.entity_id;
-        const prevPlayerState = prevHass.states?.[entityId] as MediaPlayerEntity;
+        const prevPlayerState = prevHass.states?.[
+          entityId
+        ] as MediaPlayerEntity;
         const currPlayerState = hass.states?.[entityId] as MediaPlayerEntity;
         if (getDidMediaPlayerUpdate(prevPlayerState, currPlayerState)) {
           return true;
