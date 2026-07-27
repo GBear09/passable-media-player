@@ -13,14 +13,15 @@ class MediocreMultiMediaPlayerCardWrapper extends CardWrapper<MediocreMultiMedia
       throw new Error("You need to define at least one media player.");
     }
     if (
-      config.entity_id &&
+      !config.entity_id ||
       config.media_players.find(
         player => player.entity_id === config.entity_id
       ) === undefined
     ) {
-      throw new Error(
-        "The entity_id must be one of the defined media players."
-      );
+      config = {
+        ...config,
+        entity_id: config.media_players[0].entity_id,
+      };
     }
     this.config = config;
   }
@@ -31,26 +32,30 @@ class MediocreMultiMediaPlayerCardWrapper extends CardWrapper<MediocreMultiMedia
   ) => {
     if (!hass || !prevHass || !this.config) return true;
     if (!prevHass && hass) return true;
-    return this.config.media_players.some(player => {
-      const entityId = player.entity_id;
-      if (
-        getDidMediaPlayerUpdate(
-          prevHass.states[entityId] as MediaPlayerEntity,
-          hass.states[entityId] as MediaPlayerEntity
-        )
-      ) {
-        return true;
-      }
-      if (
-        player.speaker_group_entity_id &&
-        getDidMediaPlayerUpdate(
-          prevHass.states[player.speaker_group_entity_id] as MediaPlayerEntity,
-          hass.states[player.speaker_group_entity_id] as MediaPlayerEntity
-        )
-      ) {
-        return true;
-      }
-    });
+    try {
+      return this.config.media_players.some(player => {
+        const entityId = player.entity_id;
+        const prevPlayerState = prevHass.states?.[entityId] as MediaPlayerEntity;
+        const currPlayerState = hass.states?.[entityId] as MediaPlayerEntity;
+        if (getDidMediaPlayerUpdate(prevPlayerState, currPlayerState)) {
+          return true;
+        }
+        if (player.speaker_group_entity_id) {
+          const prevGroupState = prevHass.states?.[
+            player.speaker_group_entity_id
+          ] as MediaPlayerEntity;
+          const currGroupState = hass.states?.[
+            player.speaker_group_entity_id
+          ] as MediaPlayerEntity;
+          if (getDidMediaPlayerUpdate(prevGroupState, currGroupState)) {
+            return true;
+          }
+        }
+        return false;
+      });
+    } catch {
+      return true;
+    }
   };
 
   static getConfigElement() {

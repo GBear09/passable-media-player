@@ -24,39 +24,51 @@ export class CardWrapper<
   private _previousConfig: Config | null = null;
 
   set hass(hass: HomeAssistant) {
-    if (!this.Card) {
-      throw new Error("Preact Card is not defined");
+    if (!this.Card || !this.config) {
+      return;
     }
 
-    const entityId = this.config?.entity_id;
-    const shouldRender =
-      !!entityId &&
-      (this.config !== this._previousConfig ||
-        this.shouldUpdate?.(this._previousHass, hass));
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const entityId =
+        this.config?.entity_id ||
+        (this.config as any)?.media_players?.[0]?.entity_id;
 
-    if (shouldRender) {
-      this._previousHass = hass;
-      this._previousConfig = this.config;
-      render(
-        <IntlContextProvider locale={hass.language ?? "en"}>
-          <EmotionContextProvider rootElement={this}>
-            <CardContextProvider rootElement={this} config={this.config}>
-              <HassContextProvider hass={hass}>
-                {this.providePlayerContext ? (
-                  <PlayerContextProvider entityId={entityId}>
+      const shouldRender =
+        !this._previousHass ||
+        this.config !== this._previousConfig ||
+        !this.shouldUpdate ||
+        this.shouldUpdate(this._previousHass, hass);
+
+      if (shouldRender) {
+        this._previousHass = hass;
+        this._previousConfig = this.config;
+        render(
+          <IntlContextProvider locale={hass?.language ?? "en"}>
+            <EmotionContextProvider rootElement={this}>
+              <CardContextProvider rootElement={this} config={this.config}>
+                <HassContextProvider hass={hass}>
+                  {this.providePlayerContext && entityId ? (
+                    <PlayerContextProvider entityId={entityId}>
+                      <this.Card />
+                    </PlayerContextProvider>
+                  ) : (
                     <this.Card />
-                  </PlayerContextProvider>
-                ) : (
-                  <this.Card />
-                )}
-              </HassContextProvider>
-            </CardContextProvider>
-          </EmotionContextProvider>
-        </IntlContextProvider>,
-        this
+                  )}
+                </HassContextProvider>
+              </CardContextProvider>
+            </EmotionContextProvider>
+          </IntlContextProvider>,
+          this
+        );
+      } else {
+        this._previousHass = hass;
+      }
+    } catch (err) {
+      console.warn(
+        "[Passable Media Player Card] Error during render hydration:",
+        err
       );
-    } else {
-      this._previousHass = hass;
     }
   }
 

@@ -1,10 +1,12 @@
 import { MediaPlayerEntity } from "@types";
 
 export const getDidMediaPlayerUpdate = (
-  prevEntity: MediaPlayerEntity,
-  entity: MediaPlayerEntity,
+  prevEntity?: MediaPlayerEntity | null,
+  entity?: MediaPlayerEntity | null,
   isGroupMember?: boolean
 ) => {
+  if (!prevEntity || !entity) return true;
+  if (prevEntity === entity) return false;
   // List of keys we want to include in comparison
   const compareKeys = isGroupMember
     ? [
